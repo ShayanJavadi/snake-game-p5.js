@@ -1,0 +1,60 @@
+html, body {
+  height: 100%;
+  font-family: Verdana;
+  color: #222;
+}
+
+*:focus {
+  outline: 0;
+}
+
+canvas {
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.dead {
+  position: absolute;
+  top: 50%;
+  left: 45%;
+  font-size: 200%;
+  color: #ee437b;
+
+}
+.try-again {
+  position: absolute;
+  top: 92%;
+  left: 49.5%;
+  cursor: pointer;
+}
+
+.length {
+  position: absolute;
+  top: 93%;
+  left: 65%;
+}
+
+.hidden {
+  display: none;
+}
+
+li {
+  color: #222;
+  list-style: none;
+  font-size: 200%;
+  transition: all 0.1s ease-in-out;
+}
+
+li:hover,
+li:active {
+  color: #ee437b;
+}
+
+button {
+  border: none;
+  text-decoration: none;
+  background: none;
+}
