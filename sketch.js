@@ -13,8 +13,8 @@ function setup() {
   youDied.classList.toggle("hidden");
   snake = null;
   direction = null;
-  tailArray = [];
-  foodArray = [];
+  tailArray.length = 0;
+  foodArray.length = 0;
   notDead = true;
   tailCount.innerHTML = 0;
 
@@ -43,7 +43,8 @@ function draw() {
       foodArray[i].show()
       //if snake hits food, add a new tail
       if (Math.abs(foodArray[i].x - snake.x) < 11  && Math.abs(foodArray[i].y - snake.y) < 11) {
-        foodArray.pop(foodArray[i]);
+
+        foodArray.splice(i,1);
         tailArray.push(new Tail(snake.previousX, snake.previousY));
         tailArray.push(new Tail());
         console.log(foodArray.length);
@@ -99,17 +100,16 @@ function Tail(x, y) {
 function Food(x, y) {
   this.x = x;
   this.y = y;
-
   Food.prototype.show = function() {
     fill( '#7c1d42');
     noStroke();
     rect(this.x, this.y, 12, 12);
   }
   Food.prototype.newFood = function(arr) {
-
+   let positionInLine = arr.length;
    arr.push(this); //adding current instance to array
    setTimeout(function() { //setting timeout to remove it later
-       arr.shift();
+       arr.splice(positionInLine, positionInLine);
      }, randomNumber(13000, 10000))
   }
 }
