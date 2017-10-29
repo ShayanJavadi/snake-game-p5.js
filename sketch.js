@@ -1,4 +1,4 @@
-let snake;
+let snke;
 let direction;
 let tailArray = [];
 let foodArray = [];
