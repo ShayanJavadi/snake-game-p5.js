@@ -6,7 +6,7 @@ let notDead = true;
 let tailCount;
 let youDied;
 console.log(tailCount);
-
+ 
 function setup() {
   tailCount = document.getElementById("length--js");
   youDied = document.getElementById("hidden-message");
